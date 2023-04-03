@@ -45,7 +45,10 @@ public class Finish extends AppCompatActivity {
         end.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.exit(0);
+                Intent endIntent = new Intent(getApplicationContext(), MainActivity.class);
+                endIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                endIntent.putExtra("EXIT", true);
+                startActivity(endIntent);
             }
         });
     }
